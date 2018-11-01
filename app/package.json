@@ -4,9 +4,9 @@
   "description": "A starting point for Polymer apps",
   "author": "The Polymer Authors",
   "license": "BSD-3-Clause",
-  "repository": "Polymer/polymer-starter-kit",
+  "repository": "kyledinh/pwa",
   "scripts": {
-    "start": "polymer serve",
+    "start": "polymer serve --hostname 0.0.0.0 --port 8000 build/es6-bundled",
     "build": "polymer build",
     "lint": "polymer lint",
     "test": "polymer test",
