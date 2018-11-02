@@ -19,6 +19,9 @@ $_documentContainer.innerHTML = `<iron-iconset-svg name="my-icons" size="24">
       <g id="menu">
         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
       </g>
+      <g id="chevron-left">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" transform="rotate(180 12 12)"></path>
+      </g>
       <g id="chevron-right">
         <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
       </g>

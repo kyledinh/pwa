@@ -99,8 +99,8 @@ class MyApp extends PolymerElement {
 
           <app-header slot="header" condenses="" reveals="" effects="waterfall">
             <app-toolbar>
-              <paper-icon-button icon="my-icons:chevron-right"></paper-icon-button>
-              <div main-title="">My App</div>
+              <paper-icon-button icon="my-icons:chevron-left"></paper-icon-button>
+              <div main-title="">My Profile</div>
               <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
             </app-toolbar>
           </app-header>

@@ -1,11 +1,11 @@
 version: '3'
 services:
-  polymer-app:
+  react-app:
     build:
-      context: ./polymer-app
+      context: ./react-app
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "9000:9000"
     volumes:
-      - "../app/:/usr/src/app/"
+      - "../react-app/:/opt/app/"
     tty: true

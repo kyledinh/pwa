@@ -24,3 +24,4 @@ In the container you have a Node 10 environment with the Polymer CLI.
 ## References
 
 * https://www.polymer-project.org/3.0/start/install-3-0
+* https://github.com/lopezator/hello-docker-react
