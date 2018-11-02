@@ -7,5 +7,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - "../react-app/:/opt/app/"
+      - "../react-app/:/usr/src/app/"
     tty: true
+    environment:
+      - NODE_ENV=development
