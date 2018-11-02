@@ -5,7 +5,7 @@ services:
       context: ./react-app
       dockerfile: Dockerfile
     ports:
-      - "9000:9000"
+      - "3000:3000"
     volumes:
       - "../react-app/:/opt/app/"
     tty: true
