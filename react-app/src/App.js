@@ -88,7 +88,7 @@ class App extends Component {
             </Toolbar>
           </AppBar>
 
-          <ProfileCard/>
+          <ProfileCard userInfo={data.data.userInfo}/>
           <ProfileStats/>
           <PeopleList/>
         </div>

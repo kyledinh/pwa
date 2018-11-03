@@ -25,36 +25,62 @@ const styles = theme => ({
   },
 });
 
-function ProfileCard(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <Grid container spacing={16}>
-        <Grid item>
-          <ButtonBase className={classes.image}>
-            <img className={classes.img} alt="complex" src="/avatars/avatar1465389809397-l.png" />
-          </ButtonBase>
-        </Grid>
-        <Grid item xs={12} sm container>
-          <Grid item xs container direction="column" spacing={16}>
-            <Grid item xs>
-              <div style={{textAlign: 'left'}}>
-                <p><label color="textSecondary">Name: </label><text>John Smith</text></p>
-                <p><label>Email: </label><text>webadmin@example.com</text></p>
-                <p><label>Phone: </label><text>1-800-555-6969</text></p>
-                <p><label>Mobile: </label><text>1-800-555-6968</text></p>
-                <p><label>Location: </label><text>311 Ray Street</text></p>
-              </div>
+class ProfileCard extends React.Component {
+
+  constructor(props) {
+    super(props);
+    console.log('====', props);
+    this.state = {
+      firstName: this.defined(props.userInfo, 'firstName', 'fn'),
+      lastName: this.defined(props.userInfo, 'lastName', 'ln'),
+      email: this.defined(props.userInfo, 'email', 'who@what.com'),
+      avatarpath: this.defined(props.userInfo, 'avatarpath', '/avatars/default_person.svg'),
+    };
+  }
+
+  defined(obj, field, deflt) {
+    if ((obj == undefined) || !(field in obj)) {
+      return deflt;
+    } else {
+      return obj[field];
+    }
+  }
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.root}>
+        <Grid container spacing={16}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <img className={classes.img} alt="complex" src={this.state.avatarpath} />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={16}>
+              <Grid item xs>
+                <div style={{textAlign: 'left'}}>
+                  <ul className="profile-details">
+                  <li><label color="textSecondary">Name: </label>{this.state.firstName} {this.state.lastName}</li>
+                  <li><label>Email: </label>webadmin@example.com</li>
+                  <li><label>Phone: </label>1-800-555-6969</li>
+                  <li><label>Mobile: </label>1-800-555-6968</li>
+                  <li><label>Location: </label>311 Ray Street</li>
+                  </ul>
+                </div>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 ProfileCard.propTypes = {
   classes: PropTypes.object.isRequired,
+  userInfo: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ProfileCard);
