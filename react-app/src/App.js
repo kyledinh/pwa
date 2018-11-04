@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import PeopleList from './PeopleList';
-import ProfileStats from './ProfileStats';
 import ProfileCard from './ProfileCard';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -14,8 +13,9 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import NavigateBefore from '@material-ui/icons/NavigateBefore';
+import Grid from '@material-ui/core/Grid';
 
-let data = require('./data.json');
+let localData = require('./data.json');
 
 const theme = createMuiTheme({
   typography: {
@@ -59,11 +59,10 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
-  toolbarRight: {
-    marginLeft: 'auto',
-  },
+  paddingTop6: {
+    marginTop: '6px'
+  }
 };
-
 
 class App extends Component {
   render() {
@@ -73,24 +72,28 @@ class App extends Component {
 
           <AppBar position="static">
             <Toolbar>
-              <IconButton color="inherit" aria-label="NavigateBefore">
-                <NavigateBefore />
-              </IconButton>
-
-              <Typography variant="h6" color="inherit">
-                My Profile
-              </Typography>
-              <div styles={styles.toolbarRight}>
-                <IconButton color="inherit" aria-label="Menu">
-                  <MenuIcon />
-                </IconButton>
-              </div>
+              <Grid justify="space-between" container spacing={24}>
+                <Grid item>
+                  <IconButton color="inherit" aria-label="NavigateBefore">
+                    <NavigateBefore />
+                  </IconButton>
+                </Grid>
+                <Grid item>
+                  <Typography variant="h6" color="inherit" style={styles.paddingTop6}>
+                    My Profile
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <IconButton color="inherit" aria-label="Menu">
+                    <MenuIcon />
+                  </IconButton>
+                </Grid>
+              </Grid>
             </Toolbar>
           </AppBar>
 
-          <ProfileCard userInfo={data.data.userInfo}/>
-          <ProfileStats/>
-          <PeopleList/>
+          <ProfileCard userInfo={localData.data.userInfo} stats={localData.data.stats}/>
+          <PeopleList people={localData.data.followings}/>
         </div>
       </MuiThemeProvider>
     );

@@ -22,6 +22,19 @@ class ProfileStat extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      ideas: this.defined(props.stats[0], 'total', 0),
+      views: this.defined(props.stats[1], 'total', 0),
+      posts: this.defined(props.stats[2], 'total', 0),
+    };
+  }
+
+  defined(obj, field, deflt) {
+    if ((obj == undefined) || !(field in obj)) {
+      return deflt;
+    } else {
+      return obj[field];
+    }
   }
 
   render() {
@@ -36,12 +49,15 @@ class ProfileStat extends React.Component {
           alignItems="center"
         >
           <Grid item sm>
+            <div>{this.state.ideas}</div>
             <h5>IDEAS</h5>
           </Grid>
           <Grid item sm>
+            <div>{this.state.views}</div>
             <h5>VIEWS</h5>
           </Grid>
           <Grid item sm>
+            <div>{this.state.posts}</div>
             <h5>POSTS</h5>
           </Grid>
         </Grid>
