@@ -55,7 +55,7 @@ header h1 {
 */
 
 .Spig-profile-container {
-  background-color: #EEEEF0
+  background-color: #EEEEF0;
 }
 /* Name, Email etc */
 .Spig-contact-label {
@@ -75,7 +75,7 @@ header h1 {
 }
 
 .Spig-section-padding {
-  padding: 20px 10px
+  padding: 20px 10px;
 }
 
 .Spig-section-header {
@@ -112,7 +112,6 @@ header h1 {
 .Spig-following-active {
   line-height: 1.6em;
   border-bottom: 4px solid #603A87;
-
 }
 
 .Spig-people-list .Spig-text {

@@ -28,8 +28,6 @@ class PeopleList extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
-
     return (
       <div className="section-container Spig-section-padding">
 
@@ -60,9 +58,9 @@ class PeopleList extends React.Component {
             </ListItem>
           ))}
           <div style={{textAlign: 'right', padding: 20}}>SEE ALL
-          <IconButton color="inherit" aria-label="NavigateBefore">
-            <NavigateNext />
-          </IconButton>
+            <IconButton color="inherit" aria-label="NavigateBefore">
+              <NavigateNext />
+            </IconButton>
           </div>
         </List>
 
