@@ -51,12 +51,12 @@ class PeopleList extends React.Component {
         </Grid>
       </Grid>
 
-      <div style={{textAlign: 'left', paddingLeft: 20}}>People I'm following</div>
-        <List>
+      <div style={{textAlign: 'left', paddingLeft: 20, color: '#333'}}>People I'm following</div>
+        <List classNname="Spig-people-list">
           {this.dfltEmptyArray(this.props.people).map(p => (
             <ListItem key={p.followee.userId} dense button>
               <Avatar alt="Remy Sharp" src={p.followee.avatar} />
-              <ListItemText primary={`${p.followee.userDisplayName}`} />
+              <ListItemText className="Spig-text" primary={`${p.followee.userDisplayName}`} />
             </ListItem>
           ))}
           <div style={{textAlign: 'right', padding: 20}}>SEE ALL

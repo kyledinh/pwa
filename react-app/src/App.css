@@ -15,14 +15,19 @@
 
 .Spig-profile-details ul {
   list-style-type: none;
+  padding-inline-start: 20px;
+  font-size: 1.25em;
+  color: #222;
+  line-height: 160%;
 }
 
 .Spig-profile-details label {
+  font-size: 0.90em;
   color: gray;
 }
 
 .section-container {
-    border-bottom: 1px solid #D8DDE1;
+  border-bottom: 1px solid #D8DDE1;
 }
 
 body {
@@ -81,7 +86,8 @@ header h1 {
 }
 
 .Spig-stats-section {
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .Spig-stats-label {
@@ -92,13 +98,13 @@ header h1 {
 .Spig-stats-total {
   font-size: 24px;
   color: #404243;
-  font-weight: 300;
+  font-weight: bold; /*300;*/
   line-height: 1.35em;
 }
 
 .Spig-contact-avatar {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50px;
   border: 1px solid gray;
 }
@@ -107,4 +113,8 @@ header h1 {
   line-height: 1.6em;
   border-bottom: 4px solid #603A87;
 
+}
+
+.Spig-people-list .Spig-text {
+  color: #f00;
 }

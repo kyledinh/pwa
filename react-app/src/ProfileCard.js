@@ -55,7 +55,7 @@ class ProfileCard extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className="`Spig-section-container ${classes.root}`">
+      <div className="Spig-section-container">
 
         <Grid container spacing={16} className="Spig-section-header Spig-section-padding">
           <Grid item>
