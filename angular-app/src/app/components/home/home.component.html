@@ -3,5 +3,11 @@
 </section>
 
 <mat-card>
-  <button mat-raised-button color="primary" (click)="alertClick()">Alert!</button>
+  <button mat-raised-button color="primary" (click)="getPeople()">Get People</button>
 </mat-card>
+
+<ul *ngIf="people">
+  <li *ngFor="let p of people.results">
+      <p>{{p.name}} {{p.mass}}</p>
+  </li>
+</ul>
