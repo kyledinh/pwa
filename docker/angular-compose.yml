@@ -5,7 +5,7 @@ services:
       context: ./angular-app
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "4200:4200"
     volumes:
       - "../angular-app/:/usr/src/app/"
     tty: true
