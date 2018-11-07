@@ -36,6 +36,16 @@ Each class can be boolean to appear or not
  }"
 ```
 
+## Rendering data
+```
+<ul *ngIf="data">
+  <li *ngFor="let user of data.results">
+    <img [src]="user.avatar">
+    <p>{{user.name}}</p>
+  </li>
+</ul>
+```
+
 
 ## References
 
