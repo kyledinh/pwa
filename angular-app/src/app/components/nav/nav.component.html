@@ -1,8 +1,15 @@
 <mat-toolbar color="primary">
-  <span>Angular App</span>
+  <span><mat-icon>{{left_icon}}</mat-icon></span>
+  <span>{{appTitle}}</span>
 
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
+  <mat-menu #appMenu="matMenu">
+    <a routerLink="/"><button mat-menu-item>{{appTitle}}</button></a>
+    <a routerLink="/about"><button mat-menu-item>About</button></a>
+  </mat-menu>
 
-  <span>Right Aligned Text</span>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+
 </mat-toolbar>

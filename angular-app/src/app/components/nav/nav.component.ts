@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  appTitle: string = 'My App';
+  left_icon: string = 'arrow_back_ios';
 
+  constructor() { }
   ngOnInit() {
   }
 

@@ -1,11 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"
+
 $font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif
 $primary-color: #333
 
 
 body
+  margin: 0
   font: 100% $font-stack
   color: $primary-color
+
+.mat-toolbar-single-row
+  justify-content: space-between
+
+
+.done
+  position: fixed
+  bottom: 20px
+  right: 20px
+  color: white
 
 header
   background-color: #603A87
@@ -34,6 +48,9 @@ header h1
   font-size: 17px
   color: #404243
   line-height: 1.35em
+
+section
+  padding: 10px 10px
 
 .section-container
     border-bottom: 1px solid #D8DDE1
