@@ -1,0 +1,13 @@
+version: '3'
+services:
+  react-app:
+    build:
+      context: ./angular-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - "../angular-app/:/usr/src/app/"
+    tty: true
+    environment:
+      - NODE_ENV=development
