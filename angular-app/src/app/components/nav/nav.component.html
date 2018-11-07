@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <span><mat-icon>{{left_icon}}</mat-icon></span>
+  <span>{{appTitle}}</span>
+
+  <mat-menu #appMenu="matMenu">
+    <a routerLink="/"><button mat-menu-item>{{appTitle}}</button></a>
+    <a routerLink="/about"><button mat-menu-item>About</button></a>
+    <a routerLink="/contact"><button mat-menu-item>Contact</button></a>
+  </mat-menu>
+
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+
+</mat-toolbar>
