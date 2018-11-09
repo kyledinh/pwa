@@ -9,21 +9,45 @@ import { DataService } from '../../data.service';
 
 export class HomeComponent implements OnInit {
 
-  people: Object;
+  people: Array<any> = [];
+  contacts: Object;
+  planets: Object;
+  people_count: Number = -1;
+  next: String;
+  search: String;
 
-  constructor(private data: DataService) { }
-
-  ngOnInit() {
-
+  constructor(private data: DataService) {
+    this.people = [];
+    this.search = "";
   }
 
-  getPeople() {
-    this.data.getPeople().subscribe(data => {
-      this.people = data;
-      console.log(this.people);
+  ngOnInit() {
+    this.getPlanets();
+  }
+
+  getPlanets() {
+    this.data.getPlanets().subscribe(data => {
+      this.planets = data;
+      console.log(this.planets);
     })
   }
 
+  getPeople() {
+    this.data.getPeople(this.next).subscribe(data => {
+      console.warn("data", data);
+      this.people = this.people.concat(data.results);
+      this.next = data.next;
+      this.people_count = data.count;
+      //console.log(this.people);
+    })
+  }
+
+  getContacts() {
+    this.data.getDWContacts().subscribe(data => {
+      this.contacts = data;
+      console.log(this.contacts);
+    })
+  }
 
 
 }

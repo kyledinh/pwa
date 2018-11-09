@@ -3,11 +3,27 @@
 </section>
 
 <mat-card>
-  <button mat-raised-button color="primary" (click)="getPeople()">Get People</button>
+  <button
+   *ngIf="this.people.length !== this.people_count"
+    mat-raised-button
+    color="primary"
+    (click)="getPeople()"
+  >
+  Get People
+  </button>
+  <button mat-raised-button color="primary" (click)="getContacts()">Datawasher Contacts</button>
 </mat-card>
 
+<input type="text">
 <ul *ngIf="people">
-  <li *ngFor="let p of people.results">
-      <p>{{p.name}} {{p.mass}}</p>
+  <li *ngFor="let p of people">
+          <p>{{p | json }} </p>
+      <p>{{p.name}} {{p.mass}} </p>
+  </li>
+</ul>
+
+<ul *ngIf="contacts">
+  <li *ngFor="let c of contacts">
+      <p>{{c.first_name}} {{c.last_name}} {{c.addr}}</p>
   </li>
 </ul>

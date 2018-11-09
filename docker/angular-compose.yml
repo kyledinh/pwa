@@ -1,9 +1,18 @@
 version: '3'
 services:
+  datawasher-api:
+    build:
+      context: ./datawasher-api/dist
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "443:443"
   react-app:
     build:
       context: ./angular-app
       dockerfile: Dockerfile
+    links:
+      - "datawasher-api:datawasher-api"
     ports:
       - "4200:4200"
     volumes:
