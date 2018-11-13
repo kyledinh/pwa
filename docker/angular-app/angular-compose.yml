@@ -1,6 +1,7 @@
 version: '3'
 services:
   datawasher-api:
+    container_name: pwa_datawasher_api
     build:
       context: ../datawasher-api/dist
       dockerfile: Dockerfile
@@ -8,6 +9,7 @@ services:
       - "8000:8000"
       - "443:443"
   angular-app:
+    container_name: pwa_angular_app
     build:
       context: ./
       dockerfile: Dockerfile
@@ -16,7 +18,7 @@ services:
     ports:
       - "4200:4200"
     volumes:
-      - "../angular-app/:/usr/src/app/"
+      - "../../angular-app/:/usr/src/app/"
     tty: true
     environment:
       - NODE_ENV=development

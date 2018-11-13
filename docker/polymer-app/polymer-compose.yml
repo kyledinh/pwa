@@ -1,11 +1,12 @@
 version: '3'
 services:
   polymer-app:
+    container_name: pwa_polymer_app
     build:
       context: ./
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
     volumes:
-      - "../polymer-app/:/usr/src/app/"
+      - "../../polymer-app/:/usr/src/app/"
     tty: true

@@ -1,3 +1,3 @@
 #1/bin/bash
 
-docker exec -w /usr/src/app -it docker_react-app_1 bash
+docker exec -w /usr/src/app -it pwa_react_app bash
