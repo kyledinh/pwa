@@ -41,9 +41,9 @@ class ProfileCard extends React.Component {
     };
   }
 
-  defined(obj, field, deflt) {
+  defined(obj, field, dflt) {
     if ((obj == undefined) || !(field in obj)) {
-      return deflt;
+      return dflt;
     } else {
       return obj[field];
     }

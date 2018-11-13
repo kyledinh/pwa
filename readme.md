@@ -1,8 +1,25 @@
 ## Docker
 
-In the `docker/` directory there are two different front ends that can be use for this project, React and Polymer. There currently is no backend API or database, but can configured with the docker compose yml files.
+The purpose of this repo is to show the use of Docker to manage a Frontend development project. Docker can organize different environment while sharing common resources like a databae or API server. The developer can mix and match frontend and services, giving them
+a project where they can experiment and try out different solutions in a clean and controlled enviroment.
+
+In the `docker/` directory there are three different front ends that can be use for this project, Angular, React and Polymer. The Angular project also runs a backend API in the docker machine.
 
 Here is a cheatsheet for using Docker - https://github.com/kyledinh/docker/blob/master/dev-guide.md
+
+| Frontends         | Details                             |
+|-------------------|-------------------------------------|
+| Angular           | Angular 7 and Datawasher API, app calls to two API sources |
+| Polymer           | Polymer PWA, minimal development          |
+| React             | Page/components built for local json call |
+
+* Open source API written in Go: https://github.com/kyledinh/datawasher
+
+## Angular Container
+
+This is the furthest built out Front end and it deploys the Datawasher API as a docker container as a data source
+
+See notes in `docker/readme.md`
 
 ## React Container
 
@@ -33,7 +50,6 @@ In the container you have a Node 10 environment with the Polymer CLI.
 To start a new project use
 
 * `polymer init polymer-3-starter-kit`
-
 
 ## Screenshot of React version
 

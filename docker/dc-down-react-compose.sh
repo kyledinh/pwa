@@ -1,3 +1,3 @@
 #1/bin/bash
 
-docker-compose -f react-compose.yml down
+docker-compose -f ./react-app/react-compose.yml down

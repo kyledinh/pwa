@@ -35,10 +35,12 @@ export class HomeComponent implements OnInit {
   getPeople() {
     this.data.getPeople(this.next).subscribe(data => {
       console.warn("data", data);
-      this.people = this.people.concat(data.results);
-      this.next = data.next;
-      this.people_count = data.count;
-      //console.log(this.people);
+      if (data.results !== undefined) {
+        this.people = this.people.concat(data.results);
+        this.next = data.next;
+        this.people_count = data.count;
+      }
+      // console.log(this.people);
     })
   }
 
