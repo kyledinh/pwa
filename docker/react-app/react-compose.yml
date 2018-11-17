@@ -5,6 +5,8 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    links:
+      - "datawasher-api:datawasher-api"
     ports:
       - "3000:3000"
     volumes:
@@ -12,3 +14,24 @@ services:
     tty: true
     environment:
       - NODE_ENV=development
+
+  postgres-db:
+    image: postgres:9.6
+    container_name: pwa_postgres_db
+    volumes:
+      - "../postgres-db/data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+  datawasher-api:
+    container_name: pwa_datawasher_api
+    build:
+      context: ../datawasher-api/dist
+      dockerfile: Dockerfile
+    links:
+      - "postgres-db:postgres-db"
+    depends_on:
+      - postgres-db
+    ports:
+      - "8000:8000"
+      - "443:443"
