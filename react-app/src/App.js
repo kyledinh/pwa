@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PeopleList from './PeopleList';
 import ProfileCard from './ProfileCard';
+import CountdownClock from './CountdownClock';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -88,9 +89,9 @@ class App extends Component {
               </Grid>
             </Toolbar>
           </AppBar>
-
           <ProfileCard userInfo={localData.data.userInfo} stats={localData.data.stats}/>
           <PeopleList people={localData.data.followings}/>
+          <CountdownClock/>
         </div>
       </MuiThemeProvider>
     );
