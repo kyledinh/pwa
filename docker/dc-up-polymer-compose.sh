@@ -1,3 +1,3 @@
-#1/bin/bash
+#!/bin/bash
 
-docker-compose -f ./polymer-app/polymer-compose.yml up 
+docker-compose -f ./polymer-app/polymer-compose.yml up
